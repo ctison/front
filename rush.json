@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.42.3",
+  "pnpmVersion": "5.15.2",
+  "pnpmOptions": {
+    "strictPeerDependencies": true,
+    "preventManualShrinkwrapChanges": true,
+    "useWorkspaces": true
+  },
+  "nodeSupportedVersionRange": "14",
+  "ensureConsistentVersions": true,
+  "projects": [
+    {
+      "packageName": "@ctison/next.js",
+      "projectFolder": "apps/next.js"
+    },
+    {
+      "packageName": "@ctison/eslint-config",
+      "projectFolder": "libs/eslint-config"
+    }
+  ]
+}

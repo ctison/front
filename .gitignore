@@ -1,0 +1,16 @@
+# Rush temporary files
+temp/
+common/deploy/
+common/autoinstallers/*/.npmrc
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# next.js build output
+.next
+
+# OS X temporary files
+.DS_Store

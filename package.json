@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "package.json": "sort-package-json",
+    "*.{js,jsx,ts,tsx,json,gql,md,yaml,yml,html,css}": "prettier --write",
+    "!*.{js,jsx,ts,tsx,json,gql,md,yaml,yml,html,css}": "sh ./common/autoinstallers/pre-commit/bin/add-eol.sh",
+    "*.{js,jsx,ts,tsx}": "node ./common/autoinstallers/pre-commit/bin/eslint.js"
+  },
+  "prettier": {
+    "jsxSingleQuote": true,
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true
+  },
+  "renovate": {
+    "extends": [
+      "github>ctison/renovate"
+    ]
+  }
+}

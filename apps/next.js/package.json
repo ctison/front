@@ -1,0 +1,43 @@
+{
+  "name": "@ctison/next.js",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "analyze": "ANALYZE=true next build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "next": "next",
+    "lint:check": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint": "rushx lint:check --fix"
+  },
+  "eslintConfig": {
+    "extends": "@ctison/eslint-config",
+    "overrides": [
+      {
+        "files": [
+          "pages/**/*.tsx"
+        ],
+        "rules": {
+          "react/react-in-jsx-scope": "off"
+        }
+      }
+    ]
+  },
+  "eslintIgnore": [
+    "next.config.js"
+  ],
+  "dependencies": {
+    "next": "10.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@ctison/eslint-config": "workspace:*",
+    "@next/bundle-analyzer": "10.1.3",
+    "@types/node": "14.14.41",
+    "@types/react": "17.0.3",
+    "eslint": "7.24.0",
+    "typescript": "4.2.4"
+  }
+}

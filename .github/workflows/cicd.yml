@@ -1,0 +1,16 @@
+name: CI/CD
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: node common/scripts/install-run-rush.js install
+      - run: node common/scripts/install-run-rush.js sort-package-json:check
+      - run: node common/scripts/install-run-rush.js format:check
+      - run: node common/scripts/install-run-rush.js lint:check
+      - run: node common/scripts/install-run-rush.js build

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
+  "commands": [
+    {
+      "name": "format",
+      "commandKind": "global",
+      "summary": "Format codebase with prettier",
+      "autoinstallerName": "pre-commit",
+      "shellCommand": "prettier --write ."
+    },
+    {
+      "name": "format:check",
+      "commandKind": "global",
+      "summary": "Check workspace formatting",
+      "autoinstallerName": "pre-commit",
+      "shellCommand": "prettier --check ."
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "Lint all projects",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    },
+    {
+      "name": "lint:check",
+      "commandKind": "bulk",
+      "summary": "Lint check all projects",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    },
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "Test all projects",
+      "enableParallelism": true
+    },
+    {
+      "name": "sort-package-json",
+      "commandKind": "global",
+      "summary": "Sort package.json files",
+      "autoinstallerName": "pre-commit",
+      "shellCommand": "sort-package-json $(find . -name package.json -not -path '*/node_modules/*' -not -path '*/temp/*')"
+    },
+    {
+      "name": "sort-package-json:check",
+      "commandKind": "global",
+      "summary": "Check package.json files are sorted",
+      "autoinstallerName": "pre-commit",
+      "shellCommand": "sort-package-json --check $(find . -name package.json -not -path '*/node_modules/*' -not -path '*/temp/*')"
+    },
+    {
+      "name": "lint-staged",
+      "commandKind": "global",
+      "summary": "Used by the pre-commit Git hook. This command invokes Lint-staged to check the code quality and reformat staged changes.",
+      "autoinstallerName": "pre-commit",
+      "shellCommand": "lint-staged"
+    },
+    {
+      "name": "commitlint",
+      "commandKind": "global",
+      "summary": "Used by the pre-commit Git hook. This command invokes Commitlint to check whether the commit message follows commit conventions.",
+      "autoinstallerName": "pre-commit",
+      "shellCommand": "commitlint --print-config"
+    }
+  ]
+}
